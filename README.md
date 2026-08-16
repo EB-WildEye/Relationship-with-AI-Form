@@ -41,13 +41,15 @@ Link previews need absolute URLs — WhatsApp will not resolve a relative
 
 ```html
 <!-- ==== ABSOLUTE URLS - THE ONLY PLACE THE DOMAIN APPEARS ==== -->
-<meta property="og:url"   content="https://relationship-with-ai.vercel.app/">
-<meta property="og:image" content="https://relationship-with-ai.vercel.app/og-image.png">
+<meta property="og:url"     content="https://relationship-with-ai.vercel.app/">
+<meta property="og:image"   content="https://relationship-with-ai.vercel.app/og-image.png">
+<meta name="twitter:image"  content="https://relationship-with-ai.vercel.app/og-image.png">
 ```
 
-There are two further copies in the `twitter:image` tags just below. If the
-domain changes — a custom domain, or Vercel assigning a suffixed name because
-`Relationship-with-AI` was taken — update those and nothing else.
+Those three lines are the only occurrences of the domain anywhere in the
+project — verified, not assumed. If it changes — a custom domain, or Vercel
+suffixing the name because `Relationship-with-AI` was taken — edit them and
+nothing else.
 
 After changing it, re-share the link through
 [Facebook's Sharing Debugger](https://developers.facebook.com/tools/debug/) to
