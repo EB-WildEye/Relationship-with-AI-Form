@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>My Toxic Relationship With AI - Take Away</title>
+
+<meta name="description" content="כל הסדנה בעמוד אחד - שלושה דפוסים שחוזרים כמעט בכל שיחה עם AI, הדוגמאות מההרצאה, התרגילים, ומקום לכתוב מה יצא לכם.">
+<meta name="author" content="Ein-Bar Surie">
+<meta name="robots" content="index, follow">
+
+<!-- ==== ABSOLUTE URLS - THE ONLY PLACE THE DOMAIN APPEARS ====
+     WhatsApp, iMessage and Twitter will not resolve relative paths in a
+     link preview, so these must be fully qualified. These three lines are
+     the only occurrences of the domain in the whole project. If it ever
+     changes, edit them and nothing else. -->
+<meta property="og:url" content="https://relationship-with-ai.vercel.app/">
+<meta property="og:image" content="https://relationship-with-ai.vercel.app/og-image.png">
+<meta name="twitter:image" content="https://relationship-with-ai.vercel.app/og-image.png">
+<!-- ============================================================ -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="My Toxic Relationship With AI">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="Ein-Bar Surie">
+<meta property="og:title" content="My Toxic Relationship With AI - Take Away">
+<meta property="og:description" content="כל הסדנה בעמוד אחד - שלושה דפוסים שחוזרים כמעט בכל שיחה עם AI, הדוגמאות מההרצאה, התרגילים, ומקום לכתוב מה יצא לכם">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="My Toxic Relationship With AI">
+<meta name="twitter:title" content="My Toxic Relationship With AI - Take Away">
+<meta name="twitter:description" content="כל הסדנה בעמוד אחד - שלושה דפוסים שחוזרים כמעט בכל שיחה עם AI, הדוגמאות מההרצאה, התרגילים, ומקום לכתוב מה יצא לכם">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E4180'/%3E%3Cg stroke='%23DCC7E6' stroke-width='7' stroke-linecap='round'%3E%3Cpath d='M32 14v36'/%3E%3Cpath d='M16.4 23l31.2 18'/%3E%3Cpath d='M47.6 23L16.4 41'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preload" href="fonts/rubik-var-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/gveret-levin-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-serif-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* ---- self-hosted fonts (no fonts.googleapis.com) ----
+   Rubik ships as a variable font, so one file per subset covers 300-600.
+   unicode-range is preserved from the Google CSS so the browser still
+   fetches only the subsets a given glyph actually needs. */
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/rubik-var-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/rubik-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Gveret Levin';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gveret-levin-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
+@font-face{font-family:'Gveret Levin';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gveret-levin-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+:root{
+  --ink:#1F001C;
+  --paper:#FAF5F9;
+  --violet:#AC7EC4;
+  --violet-deep:#6E4180;
+  --lav:#DCC7E6;
+  --lav-dim:#9F7CB0;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important;}
+body{
+  margin:0;background:var(--paper);color:#2B1730;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 37px,rgba(172,126,196,.13) 37px 38px);
+  font-family:'Rubik',system-ui,sans-serif;font-weight:300;
+  font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+/* keyboard focus, invisible to mouse and touch users */
+:focus-visible{outline:2.5px solid var(--violet);outline-offset:3px;border-radius:4px;}
+.hero :focus-visible,.send :focus-visible,.chat :focus-visible{outline-color:var(--lav);}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+
+/* hero */
+.hero{
+  background:var(--ink);color:var(--lav);
+  padding:58px 0 50px;position:relative;overflow:hidden;text-align:center;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto -20% -60% -20%;height:200px;
+  background:radial-gradient(ellipse at center, rgba(172,126,196,.38), transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--violet);font-weight:500;margin:0 0 18px;}
+h1{
+  font-family:'Instrument Serif',Georgia,serif;font-weight:400;
+  font-size:clamp(34px,7.5vw,58px);line-height:1;margin:0;
+  direction:ltr;color:#F2E8F4;
+}
+h1 em{color:var(--violet);font-style:italic;}
+.hero .hand{
+  font-family:'Gveret Levin',cursive;
+  font-size:clamp(21px,4.4vw,29px);color:var(--lav);margin:20px 0 0;
+}
+.hero .line{font-size:15px;color:var(--lav-dim);margin:8px auto 0;max-width:40ch;}
+
+/* sections */
+.sec{padding:46px 0 0;}
+.sec-title{
+  font-family:'Gveret Levin',cursive;font-weight:400;
+  font-size:28px;margin:0 0 6px;color:#2B1730;
+}
+.sec-title .tick{color:var(--violet);margin-inline-start:.3em;}
+.sec-lede{margin:0 0 24px;color:#6B5A72;font-size:15.5px;}
+
+.cloud{
+  text-align:center;background:#fff;border:1.5px dashed var(--violet-deep);
+  border-radius:120px 10px 110px 10px/10px 110px 10px 120px;
+  padding:16px 22px;margin:0;font-size:16px;line-height:1.6;color:#402A46;
+}
+.cloud b{color:var(--violet-deep);font-weight:600;}
+
+.paths{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0;}
+.path{
+  font-size:12.5px;color:#574465;direction:ltr;background:#fff;
+  border:1.5px solid #2B1730;border-radius:120px 8px 110px 8px/8px 110px 8px 120px;
+  padding:7px 15px;line-height:1.4;
+}
+.path b{color:var(--violet-deep);font-weight:600;margin-inline-end:6px;}
+
+/* pattern card */
+.card{
+  position:relative;background:#fff;border:1.5px solid #2B1730;
+  border-radius:255px 12px 225px 12px/12px 225px 12px 255px;
+  padding:30px 26px 26px;margin:0 0 30px;
+}
+.card{text-align:center;}
+.card .chat{text-align:start;}
+.card:nth-of-type(even){border-radius:12px 225px 12px 255px/255px 12px 225px 12px;}
+.tag{
+  position:absolute;top:-13px;right:22px;
+  background:var(--violet);color:#fff;border-radius:99px;
+  font-size:11px;letter-spacing:.12em;padding:4px 14px;direction:ltr;
+}
+.card h3{font-weight:600;font-size:21px;margin:0;}
+.quote{
+  font-family:'Gveret Levin',cursive;
+  color:var(--violet-deep);font-size:22px;margin:0;line-height:1.4;
+}
+.intro{margin:0 0 16px;font-size:16px;color:#6B5A72;line-height:1.65;}
+.fixbox{
+  margin:0;padding:16px 20px;text-align:center;
+  border:1.5px solid #2B1730;border-radius:16px;
+  background:rgba(172,126,196,.08);font-size:16px;color:#402A46;line-height:1.6;
+}
+.fixbox b{display:block;color:var(--violet-deep);font-weight:600;margin-bottom:6px;}
+
+.chat{
+  background:var(--ink);border-radius:18px;padding:16px 16px 18px;
+}
+.bubble{
+  display:table;max-width:88%;padding:9px 14px;border-radius:16px;
+  margin:0 0 10px;font-size:15px;line-height:1.5;
+}
+.me{background:var(--violet-deep);color:#fff;border-bottom-right-radius:4px;margin-inline-start:auto;}
+.reply{
+  background:#331B39;border-radius:14px;padding:14px 16px;margin:0 0 10px;
+  color:#DACAE2;font-size:14.5px;line-height:1.6;
+}
+.reply p{margin:0 0 .7em;}
+.reply p:last-child{margin:0;}
+.reply b{color:#fff;font-weight:600;}
+.reply .tags{color:#AD8CBD;font-size:.9em;}
+
+ol.steps li .ex{
+  display:block;font-family:'Gveret Levin',cursive;
+  color:var(--violet-deep);font-size:1.05em;margin-top:2px;
+}
+
+.count{
+  margin:0;font-size:12.5px;color:#7E6B85;text-align:center;letter-spacing:.03em;
+}
+.count.near{color:var(--violet-deep);font-weight:500;}
+.card > * + *{margin-top:20px;}
+.card > h3 + .quote{margin-top:6px;}
+.card > .block-label + *{margin-top:8px;}
+.card > textarea + .count{margin-top:6px;}
+.block-label{
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#7E6B85;font-weight:500;margin:0;
+}
+.prompt{
+  margin:0;text-align:center;position:relative;background:var(--ink);color:#E5D5EA;
+  padding:16px 19px;padding-inline-end:56px;border-radius:16px;border-bottom-right-radius:5px;
+  font-size:15px;line-height:1.65;margin:0;
+}
+.copy{
+  position:absolute;top:11px;inset-inline-end:11px;
+  background:rgba(220,199,230,.14);color:var(--lav);
+  border:1px solid rgba(220,199,230,.35);border-radius:8px;
+  font-family:'Rubik',sans-serif;font-size:11.5px;padding:4px 9px;cursor:pointer;
+}
+.copy:active{transform:scale(.95);}
+
+ol.steps{margin:0;padding:0;text-align:center;list-style-position:inside;font-size:16px;color:#402A46;}
+ol.steps li{margin:0 0 7px;}
+ol.steps li.bonus{color:var(--violet-deep);font-weight:500;margin-top:12px;}
+
+textarea{
+  width:100%;padding:13px 15px;
+  border:1.5px solid #2B1730;border-radius:14px;
+  background:#FDF9FC;font-family:'Rubik',sans-serif;font-weight:300;
+  font-size:16px;line-height:1.6;color:#2B1730;min-height:92px;resize:vertical;
+}
+textarea:focus,input:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(172,126,196,.18);}
+textarea::placeholder{color:#7C6886;}
+input::placeholder{color:#A895B2;}
+
+/* send */
+.send{
+  background:var(--ink);color:var(--lav);
+  border-radius:12px 225px 12px 255px/255px 12px 225px 12px;
+  padding:34px 28px 30px;margin:16px 0 0;position:relative;overflow:hidden;
+}
+.send::before{
+  content:"";position:absolute;inset:-40% -30% auto;height:200px;
+  background:radial-gradient(ellipse at center, rgba(172,126,196,.35), transparent 70%);
+  pointer-events:none;
+}
+.send h2{font-family:'Gveret Levin',cursive;font-weight:400;font-size:27px;margin:0 0 6px;color:#F2E8F4;position:relative;}
+.send .lede{color:var(--lav-dim);font-size:15px;margin:0 0 20px;position:relative;}
+.field{margin:0 0 14px;position:relative;}
+.field label{display:block;font-size:13px;letter-spacing:.04em;color:var(--lav);margin:0 0 6px;}
+input[type=text]{
+  width:100%;padding:12px 15px;border:1.5px solid rgba(220,199,230,.3);
+  border-radius:12px;background:rgba(250,245,249,.06);color:var(--lav);
+  font-family:'Rubik',sans-serif;font-size:16px;font-weight:300;
+}
+.consent{
+  display:flex;gap:12px;align-items:flex-start;margin:20px 0 22px;
+  background:rgba(172,126,196,.12);border:1px dashed rgba(220,199,230,.4);
+  border-radius:14px;padding:15px 16px;position:relative;cursor:pointer;
+}
+.consent input{margin-top:4px;accent-color:var(--violet);width:18px;height:18px;flex:none;cursor:pointer;}
+.consent span{font-size:15px;line-height:1.6;color:#E5D5EA;}
+.btn{
+  display:block;width:100%;border:none;cursor:pointer;position:relative;
+  background:var(--violet);color:#fff;font-family:'Rubik',sans-serif;
+  font-size:17px;font-weight:500;padding:14px 20px;border-radius:99px;
+  box-shadow:0 6px 22px rgba(172,126,196,.45);
+}
+.btn:active{transform:scale(.98);}
+
+.note{font-size:12.5px;color:#8B7896;margin:14px 0 0;position:relative;}
+
+/* whatsapp failure fallback - hidden until the link genuinely fails to open */
+.wa-error{
+  position:relative;margin:18px 0 0;padding:16px 18px;text-align:start;
+  border:1.5px dashed var(--violet);border-radius:14px;
+  background:rgba(172,126,196,.14);
+}
+.wa-error h3{
+  font-family:'Rubik',sans-serif;font-weight:600;font-size:16px;
+  margin:0 0 6px;color:#F2E8F4;
+}
+.wa-error p{margin:0 0 10px;font-size:14px;line-height:1.6;color:#E5D5EA;}
+.wa-error textarea{
+  min-height:140px;border-color:rgba(220,199,230,.3);
+  background:rgba(250,245,249,.06);color:var(--lav);
+}
+.wa-error .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+.wa-error .row button,.wa-error .row a{
+  flex:1 1 auto;text-align:center;cursor:pointer;text-decoration:none;
+  font-family:'Rubik',sans-serif;font-size:14px;font-weight:500;
+  padding:10px 16px;border-radius:99px;
+  background:var(--violet);color:#fff;border:1.5px solid var(--violet);
+}
+.wa-error .row a{background:transparent;color:var(--lav);border-color:rgba(220,199,230,.45);}
+
+/* contact */
+.contact{padding:44px 0 70px;text-align:center;}
+.contact h2{font-family:'Gveret Levin',cursive;font-weight:400;font-size:26px;margin:0 0 6px;}
+.contact p{margin:0 0 18px;color:#6B5A72;font-size:15px;}
+.links{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;}
+.links a{
+  border:1.5px solid #2B1730;border-radius:99px;padding:9px 22px;
+  color:#2B1730;text-decoration:none;font-size:14.5px;background:#fff;
+  box-shadow:3px 4px 0 rgba(172,126,196,.2);
+}
+.links a.primary{background:var(--violet);color:#fff;border-color:var(--violet-deep);direction:ltr;letter-spacing:.06em;}
+.page-foot{
+  padding:26px 20px 34px;text-align:center;direction:ltr;
+  font-family:'Instrument Serif',serif;font-style:italic;
+  color:var(--violet-deep);font-size:15.5px;
+  border-top:1px solid rgba(172,126,196,.3);
+}
+
+/* narrow phones - the QR code audience. Nothing here fires at >=380px. */
+@media (max-width:379px){
+  .wrap{padding:0 14px;}
+  .card{padding:28px 18px 22px;}
+  .send{padding:30px 20px 26px;}
+  /* the copy button reaches 67px in from the inline-start edge, so the text
+     column must reserve at least that much or it runs under the button */
+  .prompt{padding:16px 15px;padding-inline-end:70px;}
+  .paths{gap:8px;}
+  .path{padding:7px 12px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn:active,.copy:active{transform:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow" lang="en">Take Away</p>
+    <h1 lang="en">My <em>Toxic</em><br>Relationship<br>With AI</h1>
+    <p class="hand">זה לא הוא, זה אנחנו</p>
+    <p class="line">כל הסדנה בעמוד אחד -<br>הדוגמאות, התרגילים, ומקום לכתוב מה יצא לכם</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="sec">
+    <h2 class="sec-title">מה עשינו הערב <span class="tick" aria-hidden="true">✱</span></h2>
+    <p class="sec-lede">שלושה דפוסים שחוזרים כמעט בכל שיחה עם AI, ותיקון מעשי אחד לכל אחד.<br>הכל עובד על כל מודל - ChatGPT, Claude, Gemini, האפליקציה שאתם משתמשים בה.<br>לא חייב מנוי, אפשר גם בחינמי רק שיהיה פרופיל קבוע.</p>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-title">הדפוסים והתרגילים <span class="tick" aria-hidden="true">✱</span></h2>
+    <p class="sec-lede">ליד כל דפוס: הדוגמה מההרצאה, מוכנה להעתקה, והתרגיל.<br>כתבו מה יצא לכם - גם שורה אחת שווה.</p>
+
+    <article class="card">
+      <span class="tag" aria-hidden="true">01</span>
+      <h3>דפוס קריאת המחשבות</h3>
+      <p class="quote">'הוא כבר אמור להבין לבד'</p>
+      <div class="block-label">כך זה נראה</div>
+      <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
+        <div class="bubble me">תכתוב לי פוסט מקדם לעסק הום סטיילינג</div>
+        <div class="reply">
+          <p>✨ הבית שלכם יכול להרגיש אחרת לגמרי - בלי שיפוץ ובלי להחליף את כל מה שיש בו</p>
+          <p>🏡 הום סטיילינג נכון יודע לקחת חלל קיים ולהפוך אותו לבית שמרגיש <b>מדויק, הרמוני ובעיקר שלכם</b></p>
+          <p>📩 מזמינה אתכם לסטודיו שלי ברחוב הזית 14, כפר יונה</p>
+          <p class="tags">#הוםסטיילינג #עיצובפנים #עיצובהבית #השראהלבית</p>
+        </div>
+        <div class="bubble me">אבל העסק שלי כל פעם במקום אחר, אני מעצבת אצל הלקוח</div>
+      </div>
+      <div class="fixbox">
+        <b>פתרון פשוט - context</b>
+        עריכת הזיכרון של המודל, לפי קווים מנחים
+      </div>
+      <div class="cloud"><b>הקשר</b> = כל מה שהמודל רואה כשהוא עונה לכם, מה שלא נמצא שם לא קיים מבחינתו</div>
+      <div class="paths">
+        <span class="path" lang="en"><b>ChatGPT</b>Settings → Personalization → Custom instructions</span>
+        <span class="path" lang="en"><b>Claude</b>Settings → General → Instructions for Claude</span>
+        <span class="path" lang="en"><b>Gemini</b>Settings → Personal Intelligence → Instructions for Gemini</span>
+      </div>
+      <div class="block-label">התרגיל - כרטיס ההקשר שלכם</div>
+      <ol class="steps">
+        <li>במה אני עוסקת, ואיך העסק בנוי<span class="ex">אני מעצבת פנים עצמאית, עובדת בבית הלקוחות, ו...</span></li>
+        <li>מי הלקוחות שלי ומה חשוב להם<span class="ex">בעיקר משפחות שעברו דירה, שמחפשות תוצאה בתקציב ברור, ו...</span></li>
+        <li>איך אני נשמעת, ומה לא מתאים לי<span class="ex">הטון שלי חם ומקצועי, בלי סופרלטיבים, ולא מתאים לי...</span></li>
+      </ol>
+      <textarea id="a1" maxlength="400" aria-label="התשובה שלי לתרגיל כרטיס ההקשר" aria-describedby="d-a1" placeholder="מה כתבתם בכרטיס ההקשר שלכם? מה השתנה בתשובה?"></textarea>
+      <p class="count" id="d-a1"><span id="c-a1">0</span> / 400 תווים</p>
+    </article>
+
+    <article class="card">
+      <span class="tag" aria-hidden="true">02</span>
+      <h3>דפוס התלונה</h3>
+      <p class="quote">'זה לא נשמע כמוני, זה לא אותנטי'</p>
+      <div class="block-label">כך זה נראה</div>
+      <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
+        <div class="bubble me">תכתבי הודעה ללקוחה שעדיין לא סגרה תאריך</div>
+        <div class="reply">
+          <p>שלום רב,</p>
+          <p>ברצוני לעדכן כי טרם התקבל אישור סופי למועד הפגישה. נשמח לקבל את התייחסותכם בהקדם האפשרי על מנת שנוכל לשריין את התאריך המבוקש</p>
+          <p>בברכה</p>
+        </div>
+        <div class="bubble me">זה לא נשמע כמוני, רשמי מדי</div>
+      </div>
+      <div class="fixbox">
+        <b>פתרון פשוט - דוגמה</b>
+        להראות מה נחשב טוב<br>ללמד את הטון שלכם
+      </div>
+      <div class="block-label">הדוגמה מההרצאה</div>
+      <p class="prompt" id="p2">זו הודעה שכתבתי בעצמי ואני מרוצה ממנה: "היי דנה, ראיתי שעוד לא סגרנו תאריך - שולחת שלושה חלונות, תתפסי אחד לפני שנעלם". כתבי באותו סגנון תזכורת תשלום ללקוחה שאיחרה בשבוע<button class="copy" data-copy="p2" aria-label="העתקת הדוגמה">העתקה</button></p>
+      <div class="block-label">התרגיל - בצ'אט רגיל</div>
+      <ol class="steps">
+        <li>מצאו הודעה אחת ששלחתם ללקוח\ה ואתם מרוצים ממנה</li>
+        <li>הדביקו אותה, וציינו שזו הדוגמה לסגנון שלכם</li>
+        <li>בקשו טקסט חדש לפי אותו סגנון</li>
+        <li class="bonus">בונוס, הפעם בהעדפות ולא בצ'אט - הוסיפו פסקת טון להעדפות האישיות של החשבון שלכם, בדיוק כמו שעשינו בסעיף הקודם</li>
+      </ol>
+      <textarea id="a2" maxlength="400" aria-label="התשובה שלי לתרגיל הדוגמה והטון" aria-describedby="d-a2" placeholder="איזו הודעה בחרתם? התוצאה הרגישה יותר אתם?"></textarea>
+      <p class="count" id="d-a2"><span id="c-a2">0</span> / 400 תווים</p>
+    </article>
+
+    <article class="card">
+      <span class="tag" aria-hidden="true">03</span>
+      <h3>דפוס הריצוי</h3>
+      <div class="block-label">כך זה נראה</div>
+      <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
+        <div class="bubble me">שיטת שלושת המוקדים היא הסטנדרט בעיצוב פנים היום?</div>
+        <div class="reply">
+          <p>בהחלט 👌 שיטת שלושת המוקדים היא אחת הגישות המרכזיות בעיצוב פנים עכשווי</p>
+          <p>היא מבוססת על חלוקת החלל לשלוש נקודות עניין, ומאפשרת תנועה טבעית בין אזורי הבית תוך שמירה על איזון חזותי</p>
+        </div>
+        <div class="bubble me">המצאתי אותה עכשיו</div>
+      </div>
+      <div class="fixbox">
+        <b>פתרון פשוט - רשות לא לדעת</b>
+        להפריד בין מה שמבוסס לבין מה שהוא משער<br>ולבקש שכל תשובה תתבסס על מקור מהימן
+      </div>
+      <div class="cloud"><b>הזיה</b> = המודל ממציא מידע שגוי או חסר בסיס<br>ומציג אותו בביטחון מלא ובטון סמכותי כאילו היה עובדה</div>
+      <div class="block-label">הדוגמה מההרצאה</div>
+      <p class="prompt" id="p3">בסס את כל המסקנות והטענות שלך על מקורות מהימנים ומאמרים מדעיים<button class="copy" data-copy="p3" aria-label="העתקת הדוגמה">העתקה</button></p>
+      <div class="block-label">למי שרוצה להעמיק</div>
+      <p class="prompt" id="p4">ציין את רשימת המקורות בסוף כל מענה<button class="copy" data-copy="p4" aria-label="העתקת הדוגמה">העתקה</button></p>
+      <div class="block-label">התרגיל - בצ'אט רגיל</div>
+      <ol class="steps">
+        <li>בחרו שאלה מהתחום שלכם שהתשובה עליה ידועה לכם</li>
+        <li>שאלו אותה פעם אחת כרגיל</li>
+        <li>שאלו שוב, והפעם עם המשפט שלמעלה</li>
+        <li class="bonus">בונוס למתקדמים, הפעם בהעדפות ולא בצ'אט - הוסיפו את המשפט הזה להעדפות הקבועות שלכם, בניסוח שמתאים לכם</li>
+      </ol>
+      <textarea id="a3" maxlength="400" aria-label="התשובה שלי לתרגיל המקורות" aria-describedby="d-a3" placeholder="מה שאלתם? מה השתנה בתשובה?"></textarea>
+      <p class="count" id="d-a3"><span id="c-a3">0</span> / 400 תווים</p>
+    </article>
+  </section>
+
+  <section class="sec">
+    <div class="send">
+      <h2>שולחים אליי <span aria-hidden="true">✱</span></h2>
+      <p class="lede">התשובות נשלחות אליי בוואטסאפ, כמו שהן.<br>בלי רשימת תפוצה, בלי ניוזלטר שלא ביקשתם.</p>
+      <div class="field">
+        <label for="name">איך קוראים לך</label>
+        <input type="text" id="name" maxlength="60" autocomplete="name" placeholder="שם">
+      </div>
+      <div class="field">
+        <label for="biz">העסק או התחום שלך</label>
+        <input type="text" id="biz" maxlength="60" autocomplete="organization" placeholder="למשל: צלמת אירועים, סטודיו לאימונים">
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="feedback">
+        <span>בא לי שתציצי במה שכתבתי ותחזרי אליי עם פידבק אישי - איפה אני יכולה עוד לשפר, ומה הצעד הבא שלי</span>
+      </label>
+      <button class="btn" id="send" type="button">שליחה בוואטסאפ</button>
+      <p class="note">מילאתם רק חלק? מעולה, גם זה נשלח</p>
+
+      <div class="wa-error" id="wa-error" role="alert" hidden>
+        <h3>לא הצלחנו לפתוח את וואטסאפ</h3>
+        <p>אפשר להעתיק את ההודעה ולשלוח אותה ידנית למספר <span id="wa-phone" dir="ltr"></span>, או לנסות שוב דרך הקישור.</p>
+        <textarea id="wa-text" readonly aria-label="ההודעה המלאה להעתקה"></textarea>
+        <div class="row">
+          <button type="button" id="wa-copy">העתקת ההודעה</button>
+          <a id="wa-link" href="#" target="_blank" rel="noopener">פתיחת וואטסאפ בכל זאת</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>נשארים בקשר <span aria-hidden="true">✱</span></h2>
+    <p>מוזמנים לשלוח אלי עוד שאלות</p>
+    <div class="links">
+      <a class="primary" lang="en" href="https://www.linkedin.com/in/ebwildeye/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-foot" lang="en">Ein-Bar Surie - Builds clinical AI systems at Wolfson Hospital R&amp;D</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   The only value you ever need to change: the WhatsApp destination.
+   International format, digits only, no + and no leading zero.
+   972 = Israel, then the number without its leading 0.
+   ------------------------------------------------------------------ */
+const PHONE = "972532348301";
+
+/* If no navigation has happened by this point after a send, assume the
+   WhatsApp hand-off failed and show the copy-it-yourself fallback. */
+const OPEN_TIMEOUT_MS = 1400;
+
+const PATTERNS = [
+  {id:"a1", name:"01 דפוס קריאת המחשבות"},
+  {id:"a2", name:"02 דפוס התלונה"},
+  {id:"a3", name:"03 דפוס הריצוי"}
+];
+
+function buildMessage(){
+  const name=document.getElementById("name").value.trim();
+  const biz=document.getElementById("biz").value.trim();
+  const fb=document.getElementById("feedback").checked;
+  let lines=["My Toxic Relationship With AI - התרגילים שלי",""];
+  if(name) lines.push("שם: "+name);
+  if(biz) lines.push("עסק: "+biz);
+  lines.push("פידבק אישי: "+(fb?"כן, בא לי":"לא הפעם"));
+  lines.push("");
+  let any=false;
+  PATTERNS.forEach(p=>{
+    const v=document.getElementById(p.id).value.trim();
+    if(v){any=true;lines.push("· "+p.name+":");lines.push(v);lines.push("");}
+  });
+  if(!any) lines.push("(עוד לא מילאתי תרגילים - רק רציתי להישאר בקשר)");
+  return lines.join("\n");
+}
+
+/* encodeURIComponent is the correct encoder here: it emits %0A for newlines
+   and %20 for spaces. URLSearchParams would emit "+" for spaces, which
+   WhatsApp renders literally. Hebrew becomes 3-byte-safe UTF-8 percent
+   triplets, which every WhatsApp client decodes correctly. */
+function whatsappUrl(message){
+  return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(message);
+}
+
+function localPhone(){
+  const n = PHONE.replace(/^972/,"0");
+  return n.replace(/^(\d{3})(\d{3})(\d{4})$/,"$1-$2-$3");
+}
+
+/* iPadOS 13+ reports itself as MacIntel, so touch points are the tell. */
+function isMobile(){
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+         (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+}
+
+const errBox=document.getElementById("wa-error");
+const errText=document.getElementById("wa-text");
+const errLink=document.getElementById("wa-link");
+const errCopy=document.getElementById("wa-copy");
+document.getElementById("wa-phone").textContent=localPhone();
+
+let watchdog=null;
+
+function clearWatchdog(){
+  if(watchdog!==null){ clearTimeout(watchdog); watchdog=null; }
+}
+
+/* Any of these means the browser really did leave for WhatsApp. */
+function armWatchdog(message){
+  clearWatchdog();
+  watchdog=setTimeout(()=>{ watchdog=null; showError(message); },OPEN_TIMEOUT_MS);
+}
+window.addEventListener("pagehide",clearWatchdog);
+window.addEventListener("blur",clearWatchdog);
+document.addEventListener("visibilitychange",()=>{ if(document.hidden) clearWatchdog(); });
+
+function showError(message){
+  errText.value=message;
+  errLink.href=whatsappUrl(message);
+  errCopy.textContent="העתקת ההודעה";
+  errBox.hidden=false;
+  errBox.scrollIntoView({block:"nearest"});
+}
+
+function hideError(){
+  errBox.hidden=true;
+}
+
+/* Fully synchronous: no await, no promise, no timer before the navigation,
+   because iOS Safari only honours window.open / location changes inside the
+   original user gesture. */
+document.getElementById("send").addEventListener("click",()=>{
+  const message=buildMessage();
+  const url=whatsappUrl(message);
+  hideError();
+
+  if(isMobile()){
+    armWatchdog(message);
+    location.href=url;
+    return;
+  }
+
+  let win=null;
+  try{ win=window.open(url,"_blank","noopener"); }catch(e){ win=null; }
+  if(win && !win.closed) return;
+
+  /* Popup blocked. Same tab instead, still inside the same gesture. */
+  armWatchdog(message);
+  location.href=url;
+});
+
+function selectAndCopy(el){
+  const range=document.createRange();
+  range.selectNodeContents(el);
+  const sel=window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  let ok=false;
+  try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
+  return ok;
+}
+
+["a1","a2","a3"].forEach(id=>{
+  const ta=document.getElementById(id);
+  const out=document.getElementById("c-"+id);
+  if(!ta||!out) return;
+  const upd=()=>{
+    out.textContent=ta.value.length;
+    out.parentElement.classList.toggle("near", ta.value.length > 340);
+  };
+  ta.addEventListener("input",upd);
+  upd();
+});
+
+document.querySelectorAll(".copy").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const box=document.getElementById(btn.dataset.copy);
+    btn.style.visibility="hidden";
+    const ok=selectAndCopy(box);
+    btn.style.visibility="visible";
+    btn.textContent = ok ? "הועתק ✓" : "מסומן - Ctrl+C";
+    setTimeout(()=>btn.textContent="העתקה",2200);
+  });
+});
+
+/* The fallback panel only ever appears on HTTPS or localhost failures, so the
+   async clipboard API is available; execCommand covers the rest. */
+errCopy.addEventListener("click",()=>{
+  const done=ok=>{
+    errCopy.textContent = ok ? "הועתק ✓" : "מסומן - Ctrl+C";
+    setTimeout(()=>errCopy.textContent="העתקת ההודעה",2200);
+  };
+  errText.focus();
+  errText.setSelectionRange(0,errText.value.length);
+  let ok=false;
+  try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
+  if(ok){ done(true); return; }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(errText.value).then(()=>done(true),()=>done(false));
+    return;
+  }
+  done(false);
+});
+</script>
+
+</body>
+</html>
