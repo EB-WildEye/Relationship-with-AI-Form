@@ -179,9 +179,14 @@ ol.steps li .ex{
   margin:0;font-size:12.5px;color:#7E6B85;text-align:center;letter-spacing:.03em;
 }
 .count.near{color:var(--violet-deep);font-weight:500;}
+/* Vertical rhythm inside a card. The default is a flat 20px between
+   siblings; a section label opens a wider gap above itself and closes a
+   tight one below, so it reads as attached to the block it introduces
+   rather than floating between two of them. */
 .card > * + *{margin-top:20px;}
 .card > h3 + .quote{margin-top:6px;}
-.card > .block-label + *{margin-top:8px;}
+.card > * + .block-label{margin-top:34px;}
+.card > .block-label + *{margin-top:10px;}
 .card > textarea + .count{margin-top:6px;}
 .block-label{
   font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
