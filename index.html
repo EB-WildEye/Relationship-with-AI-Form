@@ -36,36 +36,53 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236E4180'/%3E%3Cg stroke='%23DCC7E6' stroke-width='7' stroke-linecap='round'%3E%3Cpath d='M32 14v36'/%3E%3Cpath d='M16.4 23l31.2 18'/%3E%3Cpath d='M47.6 23L16.4 41'/%3E%3C/g%3E%3C/svg%3E">
 
-<link rel="preload" href="fonts/rubik-var-hebrew.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/gveret-levin-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/varela-round-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playpen-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-serif-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
 /* ---- self-hosted fonts (no fonts.googleapis.com) ----
-   Rubik ships as a variable font, so one file per subset covers 300-600.
-   unicode-range is preserved from the Google CSS so the browser still
-   fetches only the subsets a given glyph actually needs. */
-@font-face{font-family:'Rubik';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/rubik-var-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
-@font-face{font-family:'Rubik';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/rubik-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+   Families and weights follow the deck. Playpen Sans Hebrew is the
+   handwriting face and Varela Round the body face; both are instanced at
+   the single weight the design uses, and each keeps its original
+   unicode-range so a phone fetches only the subset it needs. */
+@font-face{font-family:'Varela Round';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/varela-round-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
+@font-face{font-family:'Varela Round';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/varela-round-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Playpen Sans Hebrew';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/playpen-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
+@font-face{font-family:'Playpen Sans Hebrew';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/playpen-latin.woff2) format('woff2');unicode-range:U+0020-007E;}
 @font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 @font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Gveret Levin';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gveret-levin-hebrew.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;}
-@font-face{font-family:'Gveret Levin';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gveret-levin-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-
 :root{
+  --f-hand:'Playpen Sans Hebrew','Segoe Script',cursive;
+  --f-para:'Varela Round',system-ui,sans-serif;
   --ink:#1F001C;
+  --ink2:#331B39;
   --paper:#FAF5F9;
   --violet:#AC7EC4;
   --violet-deep:#6E4180;
   --lav:#DCC7E6;
   --lav-dim:#9F7CB0;
+  --soft:#6B5F70;
+  /* warm + fresh accents, low saturation so they stay easy on the eye */
+  --amber:#F0A868;
+  --amber-soft:#F7CDA3;
+  --amber-deep:#B96C28;
+  --sage:#8FCBA6;
+  --sage-soft:#BFE3CD;
+  --sage-deep:#3D7D5C;
+  /* The deck's amber and sage sit on dark slides. On the page's white cards
+     the same values fall just under WCAG AA for small text, so these two
+     slightly deeper tones carry text while the deck tokens above keep the
+     large ticks and decorative borders. */
+  --amber-ink:#A65F20;
+  --sage-ink:#2F6448;
 }
 *{box-sizing:border-box}
 [hidden]{display:none !important;}
 body{
   margin:0;background:var(--paper);color:#2B1730;
   background-image:repeating-linear-gradient(to bottom,transparent 0 37px,rgba(172,126,196,.13) 37px 38px);
-  font-family:'Rubik',system-ui,sans-serif;font-weight:300;
+  font-family:var(--f-para),system-ui,sans-serif;font-weight:300;
   font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;
   -webkit-text-size-adjust:100%;text-size-adjust:100%;
 }
@@ -97,7 +114,7 @@ h1{
 }
 h1 em{color:var(--violet);font-style:italic;}
 .hero .hand{
-  font-family:'Gveret Levin',cursive;
+  font-family:var(--f-hand);
   font-size:clamp(21px,4.4vw,29px);color:var(--lav);margin:20px 0 0;
 }
 .hero .line{font-size:15px;color:var(--lav-dim);margin:8px auto 0;max-width:40ch;}
@@ -105,14 +122,14 @@ h1 em{color:var(--violet);font-style:italic;}
 /* sections */
 .sec{padding:46px 0 0;}
 .sec-title{
-  font-family:'Gveret Levin',cursive;font-weight:400;
+  font-family:var(--f-hand);font-weight:400;
   font-size:28px;margin:0 0 6px;color:#2B1730;
 }
 .sec-title .tick{color:var(--violet);margin-inline-start:.3em;}
 .sec-lede{margin:0 0 24px;color:#6B5A72;font-size:15.5px;}
 
 .cloud{
-  text-align:center;background:#fff;border:1.5px dashed var(--violet-deep);
+  text-align:center;background:#fff;border:1.5px dashed var(--sage-deep);
   border-radius:120px 10px 110px 10px/10px 110px 10px 120px;
   padding:16px 22px;margin:0;font-size:16px;line-height:1.6;color:#402A46;
 }
@@ -135,14 +152,14 @@ h1 em{color:var(--violet);font-style:italic;}
 .card{text-align:center;}
 .card .chat{text-align:start;}
 .card:nth-of-type(even){border-radius:12px 225px 12px 255px/255px 12px 225px 12px;}
-.tag{
+.card > .tag{
   position:absolute;top:-13px;right:22px;
   background:var(--violet);color:#fff;border-radius:99px;
   font-size:11px;letter-spacing:.12em;padding:4px 14px;direction:ltr;
 }
 .card h3{font-weight:600;font-size:21px;margin:0;}
 .quote{
-  font-family:'Gveret Levin',cursive;
+  font-family:var(--f-hand);
   color:var(--violet-deep);font-size:22px;margin:0;line-height:1.4;
 }
 .intro{margin:0 0 16px;font-size:16px;color:#6B5A72;line-height:1.65;}
@@ -151,7 +168,8 @@ h1 em{color:var(--violet);font-style:italic;}
   border:1.5px solid #2B1730;border-radius:16px;
   background:rgba(172,126,196,.08);font-size:16px;color:#402A46;line-height:1.6;
 }
-.fixbox b{display:block;color:var(--violet-deep);font-weight:600;margin-bottom:6px;}
+.fixbox b{display:block;color:var(--sage-deep);font-weight:600;margin-bottom:6px;}
+.fixbox b .what{display:block;font-size:.84em;margin-top:2px;}
 
 .chat{
   background:var(--ink);border-radius:18px;padding:16px 16px 18px;
@@ -170,11 +188,6 @@ h1 em{color:var(--violet);font-style:italic;}
 .reply b{color:#fff;font-weight:600;}
 .reply .tags{color:#AD8CBD;font-size:.9em;}
 
-ol.steps li .ex{
-  display:block;font-family:'Gveret Levin',cursive;
-  color:var(--violet-deep);font-size:1.05em;margin-top:2px;
-}
-
 .count{
   margin:0;font-size:12.5px;color:#7E6B85;text-align:center;letter-spacing:.03em;
 }
@@ -187,32 +200,102 @@ ol.steps li .ex{
 .card > h3 + .quote{margin-top:6px;}
 .card > * + .block-label{margin-top:34px;}
 .card > .block-label + *{margin-top:10px;}
+.card > * + .eyebrow-work{margin-top:34px;}
+.card > .eyebrow-work + .ex-title{margin-top:10px;}
+.card > .ex-title + .sub{margin-top:10px;}
 .card > textarea + .count{margin-top:6px;}
 .block-label{
   font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
   color:#7E6B85;font-weight:500;margin:0;
 }
-.prompt{
-  margin:0;text-align:center;position:relative;background:var(--ink);color:#E5D5EA;
-  padding:16px 19px;padding-inline-end:56px;border-radius:16px;border-bottom-right-radius:5px;
-  font-size:15px;line-height:1.65;margin:0;
+
+/* ---- exercise blocks, ported from the deck's work slides ---- */
+.eyebrow-work{
+  font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--violet-deep);font-weight:500;margin:0;
 }
+.ex-title{
+  font-family:var(--f-hand);font-weight:400;font-size:24px;
+  line-height:1.3;margin:0;color:#2B1730;
+}
+.ex-title .tick{color:var(--amber-deep);margin-inline-start:.25em;}
+.sub{margin:0;font-size:15px;line-height:1.6;color:#6B5A72;}
+/* no margin reset here: .notes must keep the card's 20px sibling rhythm,
+   which also gives the overhanging corner tags room to clear the element
+   above them */
+.notes{display:grid;gap:20px;}
+.note{
+  position:relative;background:#fff;border:1.5px solid #2B1730;
+  border-radius:255px 12px 225px 12px/12px 225px 12px 255px;
+  padding:22px 18px 18px;text-align:start;
+  box-shadow:4px 5px 0 rgba(43,23,48,.07);
+}
+.note:nth-child(even){border-radius:12px 225px 12px 255px/255px 12px 225px 12px;}
+.note > * + *{margin-top:10px;}
+.note > .tag + *{margin-top:0;}
+.note .tag{
+  position:absolute;top:-12px;inset-inline-end:18px;
+  background:#DBC2E8;color:#3B2247;border-radius:99px;
+  font-size:11px;letter-spacing:.1em;padding:3px 12px;
+}
+.note:nth-child(2) .tag{background:#F5CFA5;color:#5C3411;}
+.note:nth-child(3) .tag{background:#BCE3CB;color:#22492F;}
+.note .q{margin:0;font-weight:600;color:#2B1730;font-size:16px;line-height:1.45;}
+.note .a{
+  margin:0;font-size:15.5px;line-height:2.1em;color:#574465;
+  background:repeating-linear-gradient(to bottom,transparent 0 calc(2.1em - 1px),rgba(96,56,114,.3) calc(2.1em - 1px) 2.1em);
+}
+.note .fill{font-family:var(--f-hand);color:var(--amber-ink);font-size:1.1em;}
+.note .blank{display:inline-block;min-width:7ch;border-bottom:1px dotted var(--violet-deep);}
+.note .body{margin:0;font-size:15.5px;line-height:1.6;color:#574465;}
+.note ol.body{padding-inline-start:1.2em;}
+.note .body li{margin:0 0 .5em;}
+.note .body li:last-child{margin-bottom:0;}
+.note .sublabel{margin:0;font-size:12.5px;letter-spacing:.06em;color:#7E6B85;font-weight:500;}
+
+/* ---- bonus block: same layout, greener paper so it reads as optional ---- */
+.bonusblock{
+  background:#E7F2EB;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 37px,rgba(40,100,72,.26) 37px 38px);
+  border:1.5px solid #2B1730;
+  border-radius:12px 225px 12px 255px/255px 12px 225px 12px;
+  padding:26px 20px 22px;
+}
+.bonusblock > * + *{margin-top:20px;}
+.bonusblock > .eyebrow-work + .ex-title{margin-top:10px;}
+.bonusblock .eyebrow-work{color:var(--sage-ink);}
+.bonusblock .ex-title .tick{color:var(--sage-deep);}
+.bonusblock .cloud{border-color:var(--sage-deep);}
+.bonusblock .cloud b{color:var(--sage-deep);}
+.bonusblock .note .tag{background:#BCE3CB;color:#22492F;}
+
+/* Varela Round ships a single weight, so emphasis comes from a hairline
+   stroke rather than a heavier cut - the deck does the same. */
+.reply b,.cloud b,.path b,.fixbox b,.note .q,h3,.eyebrow,.eyebrow-work{
+  -webkit-text-stroke:.4px currentColor;paint-order:stroke fill;
+}
+/* copy-able blocks: amber handwriting on the white note, per the deck.
+   The button sits outside the copy target so the selection can never
+   pick up the button's own label. */
+.copybox{
+  position:relative;margin:0;padding:14px 16px;padding-inline-end:72px;
+  background:rgba(240,168,104,.10);
+  border:1.5px dashed var(--amber-deep);border-radius:14px;
+}
+.copybox .ctext{margin:0;font-size:15.5px;line-height:1.75;color:#574465;}
+.copybox .ctext.ltr{text-align:start;}
 .copy{
-  position:absolute;top:11px;inset-inline-end:11px;
-  background:rgba(220,199,230,.14);color:var(--lav);
-  border:1px solid rgba(220,199,230,.35);border-radius:8px;
-  font-family:'Rubik',sans-serif;font-size:11.5px;padding:4px 9px;cursor:pointer;
+  position:absolute;top:10px;inset-inline-end:10px;
+  background:#fff;color:var(--amber-ink);
+  border:1.5px solid var(--amber-ink);border-radius:8px;
+  font-family:var(--f-para),sans-serif;font-size:11.5px;padding:4px 9px;cursor:pointer;
 }
 .copy:active{transform:scale(.95);}
-
-ol.steps{margin:0;padding:0;text-align:center;list-style-position:inside;font-size:16px;color:#402A46;}
-ol.steps li{margin:0 0 7px;}
-ol.steps li.bonus{color:var(--violet-deep);font-weight:500;margin-top:12px;}
 
 textarea{
   width:100%;padding:13px 15px;
   border:1.5px solid #2B1730;border-radius:14px;
-  background:#FDF9FC;font-family:'Rubik',sans-serif;font-weight:300;
+  background:#FDF9FC;font-family:var(--f-para),sans-serif;font-weight:300;
   font-size:16px;line-height:1.6;color:#2B1730;min-height:92px;resize:vertical;
 }
 textarea:focus,input:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(172,126,196,.18);}
@@ -230,14 +313,14 @@ input::placeholder{color:#A895B2;}
   background:radial-gradient(ellipse at center, rgba(172,126,196,.35), transparent 70%);
   pointer-events:none;
 }
-.send h2{font-family:'Gveret Levin',cursive;font-weight:400;font-size:27px;margin:0 0 6px;color:#F2E8F4;position:relative;}
+.send h2{font-family:var(--f-hand);font-weight:400;font-size:27px;margin:0 0 6px;color:#F2E8F4;position:relative;}
 .send .lede{color:var(--lav-dim);font-size:15px;margin:0 0 20px;position:relative;}
 .field{margin:0 0 14px;position:relative;}
 .field label{display:block;font-size:13px;letter-spacing:.04em;color:var(--lav);margin:0 0 6px;}
 input[type=text]{
   width:100%;padding:12px 15px;border:1.5px solid rgba(220,199,230,.3);
   border-radius:12px;background:rgba(250,245,249,.06);color:var(--lav);
-  font-family:'Rubik',sans-serif;font-size:16px;font-weight:300;
+  font-family:var(--f-para),sans-serif;font-size:16px;font-weight:300;
 }
 .consent{
   display:flex;gap:12px;align-items:flex-start;margin:20px 0 22px;
@@ -248,7 +331,7 @@ input[type=text]{
 .consent span{font-size:15px;line-height:1.6;color:#E5D5EA;}
 .btn{
   display:block;width:100%;border:none;cursor:pointer;position:relative;
-  background:var(--violet);color:#fff;font-family:'Rubik',sans-serif;
+  background:var(--violet);color:#fff;font-family:var(--f-para),sans-serif;
   font-size:17px;font-weight:500;padding:14px 20px;border-radius:99px;
   box-shadow:0 6px 22px rgba(172,126,196,.45);
 }
@@ -263,7 +346,7 @@ input[type=text]{
   background:rgba(172,126,196,.14);
 }
 .wa-error h3{
-  font-family:'Rubik',sans-serif;font-weight:600;font-size:16px;
+  font-family:var(--f-para),sans-serif;font-weight:600;font-size:16px;
   margin:0 0 6px;color:#F2E8F4;
 }
 .wa-error p{margin:0 0 10px;font-size:14px;line-height:1.6;color:#E5D5EA;}
@@ -274,7 +357,7 @@ input[type=text]{
 .wa-error .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
 .wa-error .row button,.wa-error .row a{
   flex:1 1 auto;text-align:center;cursor:pointer;text-decoration:none;
-  font-family:'Rubik',sans-serif;font-size:14px;font-weight:500;
+  font-family:var(--f-para),sans-serif;font-size:14px;font-weight:500;
   padding:10px 16px;border-radius:99px;
   background:var(--violet);color:#fff;border:1.5px solid var(--violet);
 }
@@ -282,7 +365,7 @@ input[type=text]{
 
 /* contact */
 .contact{padding:44px 0 70px;text-align:center;}
-.contact h2{font-family:'Gveret Levin',cursive;font-weight:400;font-size:26px;margin:0 0 6px;}
+.contact h2{font-family:var(--f-hand);font-weight:400;font-size:26px;margin:0 0 6px;}
 .contact p{margin:0 0 18px;color:#6B5A72;font-size:15px;}
 .links{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;}
 .links a{
@@ -303,6 +386,9 @@ input[type=text]{
   .wrap{padding:0 14px;}
   .card{padding:28px 18px 22px;}
   .send{padding:30px 20px 26px;}
+  .note{padding:20px 14px 16px;}
+  .bonusblock{padding:22px 14px 18px;}
+  .copybox{padding:14px 12px;padding-inline-end:70px;}
   /* the copy button reaches 67px in from the inline-start edge, so the text
      column must reserve at least that much or it runs under the button */
   .prompt{padding:16px 15px;padding-inline-end:70px;}
@@ -336,103 +422,161 @@ input[type=text]{
     <h2 class="sec-title">הדפוסים והתרגילים <span class="tick" aria-hidden="true">✱</span></h2>
     <p class="sec-lede">ליד כל דפוס: הדוגמה מההרצאה, מוכנה להעתקה, והתרגיל.<br>כתבו מה יצא לכם - גם שורה אחת שווה.</p>
 
-    <article class="card">
-      <span class="tag" aria-hidden="true">01</span>
+      <article class="card"><span class="tag" aria-hidden="true">01</span>
       <h3>דפוס קריאת המחשבות</h3>
       <p class="quote">'הוא כבר אמור להבין לבד'</p>
       <div class="block-label">כך זה נראה</div>
       <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
-        <div class="bubble me">תכתוב לי פוסט מקדם לעסק הום סטיילינג</div>
-        <div class="reply">
-          <p>✨ הבית שלכם יכול להרגיש אחרת לגמרי - בלי שיפוץ ובלי להחליף את כל מה שיש בו</p>
-          <p>🏡 הום סטיילינג נכון יודע לקחת חלל קיים ולהפוך אותו לבית שמרגיש <b>מדויק, הרמוני ובעיקר שלכם</b></p>
-          <p>📩 מזמינה אתכם לסטודיו שלי ברחוב הזית 14, כפר יונה</p>
-          <p class="tags">#הוםסטיילינג #עיצובפנים #עיצובהבית #השראהלבית</p>
-        </div>
-        <div class="bubble me">אבל העסק שלי כל פעם במקום אחר, אני מעצבת אצל הלקוח</div>
+      <div class="bubble me">תכתוב לי פוסט מקדם לעסק הום סטיילינג</div>
+      <div class="reply">
+      <p>✨ הבית שלכם יכול להרגיש אחרת לגמרי - בלי שיפוץ ובלי להחליף את כל מה שיש בו</p>
+      <p>🏡 הום סטיילינג נכון יודע לקחת חלל קיים ולהפוך אותו לבית שמרגיש <b>מדויק, הרמוני ובעיקר שלכם</b></p>
+      <p>📩 מזמינה אתכם לסטודיו שלי ברחוב הזית 14, כפר יונה</p>
+      <p class="tags">#הוםסטיילינג #עיצובפנים #עיצובהבית #השראהלבית</p>
       </div>
-      <div class="fixbox">
-        <b>פתרון פשוט - context</b>
-        עריכת הזיכרון של המודל, לפי קווים מנחים
+      <div class="bubble me">אבל העסק שלי כל פעם במקום אחר, אני מעצבת אצל הלקוח</div>
       </div>
-      <div class="cloud"><b>הקשר</b> = כל מה שהמודל רואה כשהוא עונה לכם, מה שלא נמצא שם לא קיים מבחינתו</div>
-      <div class="paths">
-        <span class="path" lang="en"><b>ChatGPT</b>Settings → Personalization → Custom instructions</span>
-        <span class="path" lang="en"><b>Claude</b>Settings → General → Instructions for Claude</span>
-        <span class="path" lang="en"><b>Gemini</b>Settings → Personal Intelligence → Instructions for Gemini</span>
+      <p class="fixbox"><b>פתרון פשוט<span class="what">context</span></b>עריכת הזיכרון של המודל, לפי קווים מנחים</p>
+      <p class="cloud"><b>הקשר</b> = כל מה שהמודל רואה כשהוא עונה לכם, מה שלא נמצא שם לא קיים מבחינתו</p>
+      <div class="paths"><span class="path" lang="en"><b>ChatGPT</b>Settings → Personalization → Custom instructions</span><span class="path" lang="en"><b>Claude</b>Settings → Profile → Instructions</span><span class="path" lang="en"><b>Gemini</b>Settings → Saved info → Add</span>
       </div>
-      <div class="block-label">התרגיל - כרטיס ההקשר שלכם</div>
-      <ol class="steps">
-        <li>במה אני עוסקת, ואיך העסק בנוי<span class="ex">אני מעצבת פנים עצמאית, עובדת בבית הלקוחות, ו...</span></li>
-        <li>מי הלקוחות שלי ומה חשוב להם<span class="ex">בעיקר משפחות שעברו דירה, שמחפשות תוצאה בתקציב ברור, ו...</span></li>
-        <li>איך אני נשמעת, ומה לא מתאים לי<span class="ex">הטון שלי חם ומקצועי, בלי סופרלטיבים, ולא מתאים לי...</span></li>
-      </ol>
-      <textarea id="a1" maxlength="400" aria-label="התשובה שלי לתרגיל כרטיס ההקשר" aria-describedby="d-a1" placeholder="מה כתבתם בכרטיס ההקשר שלכם? מה השתנה בתשובה?"></textarea>
+      <p class="eyebrow-work">עכשיו אתם</p>
+      <h4 class="ex-title">כותבים את ההקשר הקבוע <span class="tick" aria-hidden="true">✱</span></h4>
+      <div class="notes">
+      <div class="note"><span class="tag">01</span>
+      <p class="q">במה אני עוסקת, ואיך העסק בנוי</p>
+      <p class="a">אני <span class="fill">מעצבת פנים עצמאית</span>, עובדת <span class="fill">בבית הלקוחות</span>, ו<span class="blank"></span></p>
+      </div>
+      <div class="note"><span class="tag">02</span>
+      <p class="q">מי הלקוחות שלי ומה חשוב להם</p>
+      <p class="a">בעיקר <span class="fill">משפחות שעברו דירה</span>, שמחפשות <span class="fill">תוצאה בתקציב ברור</span>, ו<span class="blank"></span></p>
+      </div>
+      <div class="note"><span class="tag">03</span>
+      <p class="q">איך אני נשמעת, ומה לא מתאים לי</p>
+      <p class="a">הטון שלי <span class="fill">חם ומקצועי, בלי סופרלטיבים</span>, ולא מתאים לי <span class="blank"></span></p>
+      </div>
+      </div>
+      <textarea id="a1" maxlength="400" aria-label="התשובה שלי לתרגיל כותבים את ההקשר הקבוע" aria-describedby="d-a1" placeholder="מה כתבתם בכרטיס ההקשר שלכם? מה השתנה בתשובה?"></textarea>
       <p class="count" id="d-a1"><span id="c-a1">0</span> / 400 תווים</p>
-    </article>
+      </article>
 
-    <article class="card">
-      <span class="tag" aria-hidden="true">02</span>
+      <article class="card"><span class="tag" aria-hidden="true">02</span>
       <h3>דפוס התלונה</h3>
       <p class="quote">'זה לא נשמע כמוני, זה לא אותנטי'</p>
       <div class="block-label">כך זה נראה</div>
       <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
-        <div class="bubble me">תכתבי הודעה ללקוחה שעדיין לא סגרה תאריך</div>
-        <div class="reply">
-          <p>שלום רב,</p>
-          <p>ברצוני לעדכן כי טרם התקבל אישור סופי למועד הפגישה. נשמח לקבל את התייחסותכם בהקדם האפשרי על מנת שנוכל לשריין את התאריך המבוקש</p>
-          <p>בברכה</p>
-        </div>
-        <div class="bubble me">זה לא נשמע כמוני, רשמי מדי</div>
+      <div class="bubble me">תכתבי הודעה ללקוחה שעדיין לא סגרה תאריך</div>
+      <div class="reply">
+      <p>שלום רב,</p>
+      <p>ברצוני לעדכן כי טרם התקבל אישור סופי למועד הפגישה. נשמח לקבל את התייחסותכם בהקדם האפשרי על מנת שנוכל לשריין את התאריך המבוקש</p>
+      <p>בברכה</p>
       </div>
-      <div class="fixbox">
-        <b>פתרון פשוט - דוגמה</b>
-        להראות מה נחשב טוב<br>ללמד את הטון שלכם
+      <div class="bubble me">זה לא נשמע כמוני, רשמי מדי</div>
       </div>
-      <div class="block-label">הדוגמה מההרצאה</div>
-      <p class="prompt" id="p2">זו הודעה שכתבתי בעצמי ואני מרוצה ממנה: "היי דנה, ראיתי שעוד לא סגרנו תאריך - שולחת שלושה חלונות, תתפסי אחד לפני שנעלם". כתבי באותו סגנון תזכורת תשלום ללקוחה שאיחרה בשבוע<button class="copy" data-copy="p2" aria-label="העתקת הדוגמה">העתקה</button></p>
-      <div class="block-label">התרגיל - בצ'אט רגיל</div>
-      <ol class="steps">
-        <li>מצאו הודעה אחת ששלחתם ללקוח\ה ואתם מרוצים ממנה</li>
-        <li>הדביקו אותה בחלון שיחה חדש, וציינו שזו הדוגמה לסגנון שלכם</li>
-        <li>בקשו טקסט חדש לפי אותו סגנון</li>
-        <li class="bonus">בונוס, הפעם בהעדפות ולא בצ'אט - הוסיפו פסקת טון להעדפות האישיות של החשבון שלכם, בדיוק כמו שעשינו בסעיף הקודם</li>
+      <p class="fixbox"><b>פתרון פשוט<span class="what">דוגמה</span></b>להראות מה נחשב טוב, וללמד את הטון שלכם</p>
+      <p class="eyebrow-work">עכשיו אתם</p>
+      <h4 class="ex-title">ככה אני נשמעת <span class="tick" aria-hidden="true">✱</span></h4>
+      <p class="sub">דוגמה אחת שכתבתם בעצמכם מגדירה טון בצורה מדויקת יותר מכל תיאור</p>
+      <div class="notes">
+      <div class="note"><span class="tag">השלבים</span>
+      <ol class="body">
+      <li>מצאו הודעה אחת ששלחתם ללקוח\ה ואתם מרוצים ממנה</li>
+      <li>הדביקו אותה בחלון שיחה חדש, וציינו שזו הדוגמה לסגנון שלכם</li>
+      <li>בקשו טקסט חדש לפי אותו סגנון</li>
       </ol>
-      <textarea id="a2" maxlength="400" aria-label="התשובה שלי לתרגיל הדוגמה והטון" aria-describedby="d-a2" placeholder="איזו הודעה בחרתם? התוצאה הרגישה יותר אתם?"></textarea>
+      </div>
+      <div class="note"><span class="tag">דוגמה</span>
+      <div class="copybox">
+      <p class="ctext" id="cb1">"תלמדי מה הטון שלי לפי ההודעה הבאה: <span class="fill">היי דנה, ראיתי שעוד לא סגרנו תאריך - שולחת שלושה חלונות, תתפסי אחד לפני שנעלם</span>. כתבי באותו טון תזכורת תשלום ללקוחה שאיחרה בשבוע"</p>
+      <button class="copy" data-copy="cb1" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      </div>
+      </div>
+      <div class="bonusblock">
+      <p class="eyebrow-work">בונוס</p>
+      <h4 class="ex-title">להפוך את הטון לקבוע <span class="tick" aria-hidden="true">✱</span></h4>
+      <p class="cloud">פסקה אחת שנכנסת ל<b>כרטיסיית ההקשר</b> שפתחנו קודם, ומאותו רגע הטון שלכם מגיע איתכם לכל שיחה חדשה, בלי להדביק דוגמה בכל פעם</p>
+      <div class="notes one">
+      <div class="note"><span class="tag">להעתיק ולהתאים</span>
+      <div class="copybox">
+      <p class="ctext" id="cb2"><span class="fill">"הטון שלי חם ואישי, בגוף ראשון, משפטים קצרים. בלי סופרלטיבים, בלי מילים כמו 'מרתק' ו'מדהים', ובלי אימוג'ים. כשאני מבקשת טקסט ללקוחות, כתוב אותו כמו שאני מדברת ולא כמו פרסומת. הנה הודעה שכתבתי לדוגמה: 'החודש מלאה שנה לסטודיו. התחלתי מקופסת חרוזים על שולחן המטבח וכמה הזמנות של חברות, והיום יש פה מדפים שלמים. עדיין מרגש אותי לקבל תמונה של מישהי עונדת שרשרת שהכנתי לה'"</span></p>
+      <button class="copy" data-copy="cb2" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      <textarea id="a2" maxlength="400" aria-label="התשובה שלי לתרגיל ככה אני נשמעת" aria-describedby="d-a2" placeholder="איזו הודעה בחרתם? התוצאה הרגישה יותר אתם?"></textarea>
       <p class="count" id="d-a2"><span id="c-a2">0</span> / 400 תווים</p>
-    </article>
+      </article>
 
-    <article class="card">
-      <span class="tag" aria-hidden="true">03</span>
-      <h3>דפוס הריצוי</h3>
+      <article class="card"><span class="tag" aria-hidden="true">03</span>
+      <h3>המנומס והמרצה</h3>
+      <p class="quote">מרוב מלל כבר שכחתי מה שאלתי</p>
       <div class="block-label">כך זה נראה</div>
       <div class="chat" role="group" aria-label="דוגמת שיחה עם המודל">
-        <div class="bubble me">שיטת שלושת המוקדים היא הסטנדרט בעיצוב פנים היום?</div>
-        <div class="reply">
-          <p>בהחלט 👌 שיטת שלושת המוקדים היא אחת הגישות המרכזיות בעיצוב פנים עכשווי</p>
-          <p>היא מבוססת על חלוקת החלל לשלוש נקודות עניין, ומאפשרת תנועה טבעית בין אזורי הבית תוך שמירה על איזון חזותי</p>
-        </div>
-        <div class="bubble me">המצאתי אותה עכשיו</div>
+      <div class="bubble me">תסביר לי על איקיגאי</div>
+      <div class="reply">
+      <p>שאלה מצוינת 🙌 איקיגאי הוא מושג מרתק שמלווה את התרבות היפנית מאות שנים</p>
+      <p>ראשית, חשוב להבין את השורשים הלשוניים. המילה מורכבת מ-iki, חיים, ומ-gai, שמקורה במילה kai מתקופת היאן, ומשמעה ערך או תוצאה. כבר במאה ה-14 מופיע השורש הזה בכתבים...</p>
+      <p>שנית, יש להבחין בין התפיסה המסורתית באוקינאווה לבין הדיאגרמה בת ארבעת המעגלים המוכרת במערב, שנוצרה למעשה רק ב-2014 ואינה נובעת מהמקור היפני כלל, אלא ממאמר...</p>
       </div>
-      <div class="fixbox">
-        <b>פתרון פשוט - רשות לא לדעת</b>
-        להפריד בין מה שמבוסס לבין מה שהוא משער<br>ולבקש שכל תשובה תתבסס על מקור מהימן
       </div>
-      <div class="cloud"><b>הזיה</b> = המודל ממציא מידע שגוי או חסר בסיס<br>ומציג אותו בביטחון מלא ובטון סמכותי כאילו היה עובדה</div>
-      <div class="block-label">הדוגמה מההרצאה</div>
-      <p class="prompt" id="p3">בסס את כל המסקנות והטענות שלך על מקורות מהימנים ומאמרים מדעיים<button class="copy" data-copy="p3" aria-label="העתקת הדוגמה">העתקה</button></p>
-      <div class="block-label">למי שרוצה להעמיק</div>
-      <p class="prompt" id="p4">ציין את רשימת המקורות בסוף כל מענה<button class="copy" data-copy="p4" aria-label="העתקת הדוגמה">העתקה</button></p>
-      <div class="block-label">התרגיל - בצ'אט רגיל</div>
-      <ol class="steps">
-        <li>בחרו שאלה מהתחום שלכם שהתשובה עליה ידועה לכם</li>
-        <li>שאלו אותה פעם אחת כרגיל בחלון שיחה</li>
-        <li>שאלו שוב, והפעם עם המשפט שלמעלה בחלון שיחה חדש</li>
-        <li class="bonus">בונוס למתקדמים, הפעם בהעדפות ולא בצ'אט - הוסיפו את המשפט הזה להעדפות הקבועות שלכם, בניסוח שמתאים לכם</li>
+      <p class="fixbox"><b>פתרון פשוט<span class="what">להגדיר את הצורה</span></b>לבקש תשובה קצרה ועניינית, ולבקש שכל טענה תתבסס על מקור מהימן</p>
+      <p class="eyebrow-work">עכשיו אתם</p>
+      <h4 class="ex-title">מדויק וממוקד <span class="tick" aria-hidden="true">✱</span></h4>
+      <div class="notes">
+      <div class="note"><span class="tag">המשימה</span>
+      <ol class="body">
+      <li>פתחו חלון שיחה חדש ותשאלו שאלה לגבי נושא שמעניין אתכם ואתם מכירים אותו</li>
+      <li>פתחו חלון שיחה חדש, העתיקו את אותה שאלה, והוסיפו <b>בסוף</b> את משפט הדיוק</li>
       </ol>
-      <textarea id="a3" maxlength="400" aria-label="התשובה שלי לתרגיל המקורות" aria-describedby="d-a3" placeholder="מה שאלתם? מה השתנה בתשובה?"></textarea>
+      </div>
+      <div class="note"><span class="tag">דיוק</span>
+      <div class="copybox">
+      <p class="ctext" id="cb3"><span class="fill">"בסס את כל המסקנות והטענות שלך על מקורות מהימנים ומאמרים מדעיים"</span></p>
+      <button class="copy" data-copy="cb3" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      <p class="sublabel">להעמיק:</p>
+      <div class="copybox">
+      <p class="ctext" id="cb4"><span class="fill">"ציין את רשימת המקורות בסוף כל מענה"</span></p>
+      <button class="copy" data-copy="cb4" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      <p class="body">דוגמה:<br>"מה ההבדל בין ויניאסה להאטה יוגה?"<br>ואז מדביקים בסוף את משפט הדיוק</p>
+      </div>
+      </div>
+      <div class="notes">
+      <div class="note"><span class="tag">המשימה</span>
+      <ol class="body">
+      <li>פתחו חלון שיחה חדש ותשאלו שאלה לגבי נושא שמעניין אתכם ואתם מכירים אותו</li>
+      <li>פתחו חלון שיחה חדש, העתיקו את אותה שאלה, והוסיפו <b>בהתחלה</b> את תגית המיקוד</li>
+      </ol>
+      </div>
+      <div class="note"><span class="tag">מיקוד</span>
+      <div class="copybox">
+      <p class="ctext ltr" dir="ltr" id="cb5"><span class="fill">caveman explain short:</span></p>
+      <button class="copy" data-copy="cb5" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      <p class="body">מורידה נימוסים, הקדמות ומילות קישור, ומשאירה את התשובה עצמה</p>
+      <p class="body">דוגמה:<br>"<span class="fill">caveman explain short:</span> מי היא אפרודיטה ואיך היא נולדה?"</p>
+      </div>
+      </div>
+      <div class="bonusblock">
+      <p class="eyebrow-work">בונוס</p>
+      <h4 class="ex-title">להפוך את זה לקבוע <span class="tick" aria-hidden="true">✱</span></h4>
+      <p class="cloud">מה שעבד לכם נכנס ל<b>כרטיסיית ההקשר</b>, ומאותו רגע כל שיחה חדשה מתחילה כבר מדויקת וממוקדת</p>
+      <div class="notes one">
+      <div class="note"><span class="tag">להעתיק ולהתאים</span>
+      <div class="copybox">
+      <p class="ctext" id="cb6"><span class="fill">"תשובות קצרות וענייניות, בלי הקדמות ובלי מחמאות. כל טענה עובדתית מבוססת על מקור מהימן, וציין את רשימת המקורות בסוף כל תשובה. אם אתה לא בטוח במשהו, אמור את זה במקום לנחש"</span></p>
+      <button class="copy" data-copy="cb6" aria-label="העתקת הדוגמה">העתקה</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      <textarea id="a3" maxlength="400" aria-label="התשובה שלי לתרגיל מדויק וממוקד" aria-describedby="d-a3" placeholder="מה שאלתם? מה השתנה בתשובה?"></textarea>
       <p class="count" id="d-a3"><span id="c-a3">0</span> / 400 תווים</p>
-    </article>
+      </article>
+  
   </section>
 
   <section class="sec">
@@ -493,7 +637,7 @@ const OPEN_TIMEOUT_MS = 1400;
 const PATTERNS = [
   {id:"a1", name:"01 דפוס קריאת המחשבות"},
   {id:"a2", name:"02 דפוס התלונה"},
-  {id:"a3", name:"03 דפוס הריצוי"}
+  {id:"a3", name:"03 המנומס והמרצה"}
 ];
 
 function buildMessage(){

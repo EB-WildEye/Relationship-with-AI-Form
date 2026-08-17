@@ -18,3 +18,7 @@ npm-debug.log*
 # Secrets - this project has no backend and should never gain one
 .env
 .env.*
+
+# Source deck. It is the reference the page is built from, but the repo is
+# public and the full talk is not meant to be published with it.
+toxic-ai-slides.html
